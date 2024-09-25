@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@tailwind base;
+@tailwind components;
+
+.btn {
+  @apply bg-white rounded-full py-2 px-[19px] text-[#15A9A0] text-xs flex items-center gap-[6px] justify-center;
+}
+
+@tailwind utilities;
+
+* {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+}
+
+body {
+  background-image: url("/dashboard.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+  /* background-attachment: fixed; */
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  /* -webkit-appearance: none; */
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.Dropdown-root .Dropdown-control {
+  border: none;
+  display: flex;
+  cursor: pointer;
+  /* width: 100%; */
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* .Dropdown-option {
+  padding: 10px 0px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  color: #06152B
+} */
+
+/* .Dropdown-option:hover {
+  background-color: #F1F4FA;
+  cursor: pointer;
+} */
+
+.pagination li,
+a {
+  align-items: center;
+}
+
+.MuiPagination-ul li button {
+  /* background-color: #f5f6fa; */
+  color: white;
+  border: 1px solid white;
+}
+
+.MuiPagination-ul li:first-child button,
+.MuiPagination-ul li:last-child button {
+  background-color: white;
+  opacity: 1 !important;
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.MuiPagination-ul li:first-child button svg,
+.MuiPagination-ul li:last-child button svg {
+  /* width: 1.5em !important;
+  height: 1.5em !important; */
+  fill: #15a9a0 !important;
+}
+
+.css-ojyubp-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+  background-color: #15a9a0 !important;
+  color: white !important;
+  border: 1px solid #15a9a0 !important;
+}
+
+.css-1v2lvtn-MuiPaginationItem-root {
+  display: none;
+}
+
+.rmdp-wrapper {
+  box-shadow: none !important;
+  width: 100% !important;
+}
+
+.rmdp-calendar {
+  width: 100%;
+}
+
+.rmdp-day-picker div {
+  width: 100%;
+}
+
+.sd {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: #E5F9F7;
+  color: #15A9A0; */
+}
+
+.rmdp-range {
+  background-color: #15a9a0 !important;
+  color: white !important;
+  box-shadow: none !important;
+}
+
+.rmdp-week-day {
+  color: black !important;
+  font-size: 12px !important;
+}
+
+.rmdp-arrow-container {
+  background-color: #f2efff !important;
+}
+
+.rmdp-arrow-container i {
+  border-color: #15a9a0 !important;
+}
+.rmdp-arrow {
+  width: 8px !important;
+  height: 8px !important;
+}
+
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    opacity: 0.15 !important;
+    background: #808080aa !important;
+    background-clip: content-box !important;
+    border: 3.6px solid transparent !important;
+    /*
+    I wasn't satisfied with the roundedness of the scrollbars ends
+    because they look a little bit blurry. I guess it has to do with
+    the way they're rendered (aliasing kind of thing).
+    So, to get sharper looking of the round ends of the scrollbars
+    I did some experiments with different values of the border width.
+    
+    It turned out that with 0.225em (3.6px) border width, the rounded ends
+    look sharper than that with 4px border width.
+    
+        0.225em = 3.6px
+        
+        --> from: 16px as a base of 1em
+        --> then we do the math to get the px
+        --> 16px * 0.225em = 3.6px
+    
+    My goal here is to find just enough gap between the scrollbar thumb
+    and the outer side of the scrollbar track---not too narrow that it's
+    going to make the scrollbar thumb appears to be so bold and large
+    which is not really appealing to my eyes and not too wide that makes
+    the scrollbar thumb appears too small or narrow compared with the wide
+    gap between it and the outer of the scrollbar track---without losing
+    the edge definition and sharpness of the rounded ends of the scrollbar
+    thumb.
+    But 3.6px doesn't seem to work when it's applied on <select> tag.
+    Hence I keep applying 4px for <select> tag.
+    */
+    border-radius: 8px !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    min-height: 24px !important;
+    min-width: 24px !important;
+  }
+
+  ::-webkit-scrollbar-thumb:hover,
+  ::-webkit-scrollbar-thumb:active {
+    background: #808080 !important;
+    background-clip: content-box !important;
+    border: 3.6px solid transparent !important;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent !important;
+    border: none !important;
+  }
+
+  ::-webkit-scrollbar-track:hover {
+    background: rgba(128, 128, 128, 0.15) !important;
+  }
+
+  ::-webkit-scrollbar-track:vertical:hover {
+    border-left: 1px solid rgba(0, 0, 0, 0.1) !important;
+  }
+
+  ::-webkit-scrollbar-track:horizontal:hover {
+    border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+  }
+
+  select::-webkit-scrollbar-thumb {
+    border: 1px solid hsl(0 0% 92% / 1) !important;
+  }
+
+  select::-webkit-scrollbar-track {
+    background: hsl(0 0% 92% / 1) !important;
+  }
+
+  select::-webkit-scrollbar-track:vertical,
+  select::-webkit-scrollbar-track:horizontal {
+    border-top: none !important;
+    border-left: none !important;
+  }
+}
